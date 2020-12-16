@@ -1,6 +1,7 @@
 package com.javaweb.model;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,10 +20,17 @@ public class topic {
 	@JoinColumn(name = "id_user")
 	users users;
 
-	String name_topic;
+	@Column(name = "name_topic")
+	String nameTopic;
+	
+	@Column(name = "status")
 	int status;
-	String created_at;
-	String updated_at;
+	
+	@Column(name = "created_at")
+	String createdAt;
+	
+	@Column(name = "updated_at")
+	String updatedAt;
 
 	public int getId_topic() {
 		return id_topic;
@@ -40,13 +48,7 @@ public class topic {
 		this.users = users;
 	}
 
-	public String getName_topic() {
-		return name_topic;
-	}
-
-	public void setName_topic(String name_topic) {
-		this.name_topic = name_topic;
-	}
+	
 
 	public int getStatus() {
 		return status;
@@ -56,20 +58,29 @@ public class topic {
 		this.status = status;
 	}
 
-	public String getCreated_at() {
-		return created_at;
+	public String getNameTopic() {
+		return nameTopic;
 	}
 
-	public void setCreated_at(String created_at) {
-		this.created_at = created_at;
+	public void setNameTopic(String nameTopic) {
+		this.nameTopic = nameTopic;
 	}
 
-	public String getUpdated_at() {
-		return updated_at;
+	public String getCreatedAt() {
+		return createdAt;
 	}
 
-	public void setUpdated_at(String updated_at) {
-		this.updated_at = updated_at;
+	public void setCreatedAt(String createdAt) {
+		this.createdAt = createdAt;
 	}
+
+	public String getUpdatedAt() {
+		return updatedAt;
+	}
+
+	public void setUpdatedAt(String updatedAt) {
+		this.updatedAt = updatedAt;
+	}
+
 
 }

@@ -15,12 +15,13 @@ import com.javaweb.model.product;
 
 @Repository
 @Scope(proxyMode = ScopedProxyMode.TARGET_CLASS)
-public class product_dao {
+public class ProductDAO {
 
 	@Autowired
 	SessionFactory sessionFactory;
 	
-	@Transactional
+	
+	@Transactional(readOnly = true)
 	public List<product> list_product() {
 		Session session = sessionFactory.getCurrentSession();
 		String sqlString="from product where status = 0";
@@ -33,7 +34,7 @@ public class product_dao {
 	
 	
 
-	@Transactional
+	@Transactional(readOnly = true)
 	public product productbyID(int id ) {
 		
 		Session session= sessionFactory.getCurrentSession();

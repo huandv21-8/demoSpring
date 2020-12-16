@@ -1,5 +1,6 @@
 package com.javaweb.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,12 +11,14 @@ public class users {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_user")
 	int id_user;
 
-
+	@Column(name = "email")
 	String email;
+
+	@Column(name = "password")
 	String password;
-	
 
 	public users() {
 		super();
@@ -53,6 +56,5 @@ public class users {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
 
 }

@@ -6,16 +6,18 @@ import java.security.NoSuchAlgorithmException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import com.javaweb.dao.user_dao;
+import com.javaweb.dao.UserDAO;
 import com.javaweb.model.users;
 
 @Service
-public class user_service {
+public class userService {
 
 	@Autowired
-	user_dao user_dao;
+	UserDAO user_dao;
 
+	
 	public boolean checkLogin(users user) {
 		boolean check = false;
 		String pasString = "";
@@ -35,6 +37,7 @@ public class user_service {
 		return check;
 	}
 
+
 	public boolean register(String email, String pass) {
 		String converPassString = "";
 		try {
@@ -47,6 +50,7 @@ public class user_service {
 		System.out.println(converPassString);
 		return user_dao.register(user);
 	}
+
 
 	private String convertPass(String text) throws NoSuchAlgorithmException {
 		MessageDigest md = MessageDigest.getInstance("MD5");

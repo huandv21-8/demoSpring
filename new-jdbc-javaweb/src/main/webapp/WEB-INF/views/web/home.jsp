@@ -66,8 +66,8 @@
 				<c:forEach items="${listProduct }" var="item">
 					<tr>
 						<th scope="row"></th>
-						<td>${item.name_product }</td>
-						<td><img style="width: 40px;" src="${item.image }" alt="${item.name_product }"></td>
+						<td>${item.nameProduct }</td>
+						<td><img style="width: 40px;" src="${item.image }" alt="${item.nameProduct }"></td>
 						<td><fmt:formatNumber value="${item.price}" minFractionDigits="0"/></td>
 						<td><a href='<c:url value="/delete/${item.id_product }" />' onclick="return confirm('ban co muon xoa??')" >xóa</a></td>
 						<td><a href='<c:url value="/edit/${item.id_product }" />'>edit</a></td>

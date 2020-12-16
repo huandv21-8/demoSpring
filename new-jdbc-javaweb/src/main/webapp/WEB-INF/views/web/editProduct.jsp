@@ -43,7 +43,7 @@
 					product:</label>
 				<div class="col-sm-10">
 					<input type="text" class="form-control" id="nameProduct"
-						placeholder="Enter name product" value="${product.name_product }"
+						placeholder="Enter name product" value="${product.nameProduct }"
 						name="nameProduct">
 				</div>
 			</div>

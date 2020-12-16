@@ -14,12 +14,12 @@ import com.javaweb.model.users;
 
 @Repository
 @Scope(proxyMode = ScopedProxyMode.TARGET_CLASS)
-public class user_dao {
+public class UserDAO {
 	
 	@Autowired
 	SessionFactory sessionFactory;
 	
-	@Transactional
+	@Transactional(readOnly = true)
 	public List<users> list_user() {
 		Session session = sessionFactory.getCurrentSession();
 		String sqlString = "from users";

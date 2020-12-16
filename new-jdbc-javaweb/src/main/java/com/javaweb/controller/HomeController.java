@@ -10,15 +10,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.javaweb.dao.product_dao;
-import com.javaweb.service.product_service;
+import com.javaweb.dao.ProductDAO;
+import com.javaweb.service.productService;
 
 @Controller
 public class HomeController {
 	@Autowired
-	product_service product_service;
+	productService product_service;
 	@Autowired
-	product_dao product_dao;
+	ProductDAO product_dao;
 
 	@GetMapping("")
 	public ModelAndView index() {

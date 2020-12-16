@@ -13,14 +13,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.javaweb.model.users;
-import com.javaweb.service.user_service;
+import com.javaweb.service.userService;
 
 @Controller
 @RequestMapping("")
 public class LoginController {
 
 	@Autowired
-	user_service user_service;
+	userService user_service;
 	
 	@Autowired
 	HomeController homeController;

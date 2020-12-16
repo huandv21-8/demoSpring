@@ -1,5 +1,6 @@
 package com.javaweb.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,27 +26,33 @@ public class product {
 	@JoinColumn(name = "id_user")
 	private users users;
 
-	private String name_product;
+	@Column(name = "name_product")
+	private String nameProduct;
+	
+	@Column(name = "price")
 	private float price;
+	
+	@Column(name = "description")
 	private String description;
+	
+	@Column(name = "image")
 	private String image;
-
+	
+	@Column(name = "sale")
 	@org.springframework.lang.Nullable
 	private  Integer sale;
 
+	@Column(name = "status")
 	private int status;
-	private String created_at;
-	private String updated_at;
+	
+	@Column(name = "created_at")
+	private String createdAt;
+	
+	@Column(name = "updated_at")
+	private String updatedAt;
 
 
 
-	public int getId_product() {
-		return id_product;
-	}
-
-	public void setId_product(int id_product) {
-	 this.id_product = id_product;
-	}
 
 	public category getCategory() {
 		return category;
@@ -69,14 +76,6 @@ public class product {
 
 	public void setUsers(users users) {
 		this.users = users;
-	}
-
-	public String getName_product() {
-		return name_product;
-	}
-
-	public void setName_product(String name_product) {
-		this.name_product = name_product;
 	}
 
 	public float getPrice() {
@@ -110,7 +109,6 @@ public class product {
 	public void setSale(Integer sale) {
 		this.sale = sale;
 	}
-
 	
 	public int getStatus() {
 		return status;
@@ -120,22 +118,37 @@ public class product {
 		this.status = status;
 	}
 
-	public String getCreated_at() {
-		return created_at;
+
+	public int getId_product() {
+		return id_product;
 	}
 
-	public void setCreated_at(String created_at) {
-		this.created_at = created_at;
+	public void setId_product(int id_product) {
+		this.id_product = id_product;
 	}
 
-	public String getUpdated_at() {
-		return updated_at;
+	public String getNameProduct() {
+		return nameProduct;
 	}
 
-	public void setUpdated_at(String updated_at) {
-		this.updated_at = updated_at;
+	public void setNameProduct(String nameProduct) {
+		this.nameProduct = nameProduct;
 	}
 
+	public String getCreatedAt() {
+		return createdAt;
+	}
 
+	public void setCreatedAt(String createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public String getUpdatedAt() {
+		return updatedAt;
+	}
+
+	public void setUpdatedAt(String updatedAt) {
+		this.updatedAt = updatedAt;
+	}
 
 }

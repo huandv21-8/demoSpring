@@ -3,6 +3,7 @@ package com.javaweb.model;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,11 +27,20 @@ public class category {
 	@JoinColumn(name = "id_user")
 	users users;
 
-	String name_category;
-	String image_category;
+	@Column(name = "name_category")
+	String nameCategory;
+	
+	@Column(name = "image_category")
+	String imageCategory;
+	
+	@Column(name = "status")
 	int status;
-	String created_at;
-	String updated_at;
+	
+	@Column(name = "created_at")
+	String createdAt;
+	
+	@Column(name = "updated_at")
+	String updatedAt;
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "id_category")
@@ -44,13 +54,7 @@ public class category {
 		this.products = products;
 	}
 
-	public String getImage_category() {
-		return image_category;
-	}
-
-	public void setImage_category(String image_category) {
-		this.image_category = image_category;
-	}
+	
 
 	public int getId_category() {
 		return id_category;
@@ -76,12 +80,36 @@ public class category {
 		this.users = users;
 	}
 
-	public String getName_category() {
-		return name_category;
+	public String getNameCategory() {
+		return nameCategory;
 	}
 
-	public void setName_category(String name_category) {
-		this.name_category = name_category;
+	public void setNameCategory(String nameCategory) {
+		this.nameCategory = nameCategory;
+	}
+
+	public String getImageCategory() {
+		return imageCategory;
+	}
+
+	public void setImageCategory(String imageCategory) {
+		this.imageCategory = imageCategory;
+	}
+
+	public String getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(String createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public String getUpdatedAt() {
+		return updatedAt;
+	}
+
+	public void setUpdatedAt(String updatedAt) {
+		this.updatedAt = updatedAt;
 	}
 
 	public int getStatus() {
@@ -92,20 +120,5 @@ public class category {
 		this.status = status;
 	}
 
-	public String getCreated_at() {
-		return created_at;
-	}
-
-	public void setCreated_at(String created_at) {
-		this.created_at = created_at;
-	}
-
-	public String getUpdated_at() {
-		return updated_at;
-	}
-
-	public void setUpdated_at(String updated_at) {
-		this.updated_at = updated_at;
-	}
-
+	
 }
